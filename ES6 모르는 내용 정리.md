@@ -75,3 +75,25 @@
 </script>
 ```
 
+##### 전개 연산자를 사용한 배열 복제
+
+```javascript
+//배열을 선언
+const originalArray = [1, 2, 3, 4, 5];
+
+//배열을 복제
+const newArray = [...originalArray];
+```
+
+##### 전개 연산자를 사용한 배열 병합
+
+```javascript
+//배열을 선언
+const arrayA = [1, 2, 3, 4, 5];
+const arrayB = [52, 273, 103, 32, 57];
+
+//배열을 병합
+const newArray = [...arrayA, ...arrayB];
+alert(newArray);
+```
+
