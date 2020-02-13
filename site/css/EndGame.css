@@ -1,12 +1,12 @@
 body {
-  margin: auto;
-  width: 50%;
   /* border: 3px solid green; */
   text-align: center;
 }
 
 .container {
-  width: 50% !important;
+  width: 100vw !important;
+  height: 100vh;
+  border: 3px solid DodgerBlue;
 }
 .modal-header,
 h4,
@@ -22,5 +22,34 @@ h4,
 
 #game {
   display: none;
-  border: 3px solid green;
+}
+
+#단어 {
+  font-size: 50px;
+  border: 3px solid DodgerBlue;
+  padding: 10px;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: DodgerBlue;
+}
+
+.flex-container .box {
+  background-color: #f1f1f1;
+  width: 50%;
+  height: 500px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+.disabledbutton {
+  pointer-events: none;
+  opacity: 0.4;
 }

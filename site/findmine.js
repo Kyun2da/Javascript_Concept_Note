@@ -11,6 +11,7 @@ var 코드표 = {
   지뢰: 1,
   보통칸: 0
 };
+
 document.querySelector("#exec").addEventListener("click", function() {
   //tbody의 내부 먼저 초기화
   tbody.innerHTML = "";
@@ -22,19 +23,19 @@ document.querySelector("#exec").addEventListener("click", function() {
   var mine = document.querySelector("#mine").value;
 
   //지뢰 위치 뽑기
-  var 후보군 = Array(hor * ver)
+  var 후보군 = Array(hor * ver) //100개를 넣으면 0부터 99까지 뽑힘
     .fill()
     .map(function(요소, 인덱스) {
       return 인덱스;
     });
-  var 셔플 = [];
+
+  var 셔플 = []; //셔플안에 지뢰들이 들어갈 자리를 뽑는다
   while (후보군.length > hor * ver - mine) {
     var 이동값 = 후보군.splice(Math.floor(Math.random() * 후보군.length), 1)[0];
     셔플.push(이동값);
   }
 
   //지뢰 테이블 만들기
-
   for (var i = 0; i < ver; i += 1) {
     var arr = [];
     var tr = document.createElement("tr");
@@ -43,6 +44,7 @@ document.querySelector("#exec").addEventListener("click", function() {
       arr.push(0);
       var td = document.createElement("td");
       td.addEventListener("contextmenu", function(e) {
+        //우클릭시
         e.preventDefault();
         if (중단플래그) {
           return;
@@ -52,13 +54,16 @@ document.querySelector("#exec").addEventListener("click", function() {
         var 칸 = Array.prototype.indexOf.call(부모tr.children, e.currentTarget);
         var 줄 = Array.prototype.indexOf.call(부모tbody.children, 부모tr);
         if (
+          //우클릭을 처음했을때, !로 바꿈
           e.currentTarget.textContent === "" ||
           e.currentTarget.textContent === "X"
         ) {
           e.currentTarget.textContent = "!";
         } else if (e.currentTarget.textContent === "!") {
+          //우클릭을 두번째 했을때 ?로바꿈
           e.currentTarget.textContent = "?";
         } else if (e.currentTarget.textContent === "?") {
+          //우클릭을 3번째했을때 다시 원상복구시킴
           e.currentTarget.textContent = "";
           if (dataset[줄][칸] === 1) {
             e.currentTarget.textContent = "";
