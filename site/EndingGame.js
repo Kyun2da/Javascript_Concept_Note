@@ -6,6 +6,7 @@ var 버튼 = document.getElementById("버튼");
 var 입력창2 = document.getElementById("입력창2");
 var 버튼2 = document.getElementById("버튼2");
 var 결과창 = document.getElementById("결과창");
+var 시작화면 = document.getElementById("startMenu");
 var 시작버튼 = document.getElementById("myBtn");
 var word = document.getElementById("startname");
 var Player1 = document.getElementById("usrname");
@@ -27,7 +28,7 @@ var 플레이어2공간 = document.getElementById("플레이어2공간");
 
 playButton.addEventListener("click", function(e) {
   game.style.display = "block";
-  시작버튼.style.display = "none";
+  시작화면.style.display = "none";
   단어.textContent = word.value;
   플레이어1 = Player1.value;
   플레이어2 = Player2.value;
