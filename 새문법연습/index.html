@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <title>Document</title>
+    <style media="screen">
+        #container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #container>div {
+            height: 5em;
+            width: 5em;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <script type="text/babel"> //바벨사용
+        //1. let과 var , const 의 차이
+        let topic = "자바스크립트";
+
+        if (topic) {
+            let topic = "리액트";
+            console.log('블록', topic) //블록 리액트
+        }
+        console.log("글로벌", topic); //글로벌 자바스크립트
+
+        //2. let의 카운터에서 올바른 사용
+        var div, container = document.getElementById('container');
+
+        for (let i = 0; i < 5; i++) {
+            div = document.createElement('div');
+            div.onclick = function () {
+                alert('이것은 박스 #' + i + '입니다')
+            }
+            container.appendChild(div);
+        }
+
+        //3. 템플릿 문자열
+        const lastName = "Oh"
+        const middleName = "현석"
+        const firstName = "Frank"
+
+        //아래의 두개가 같다
+        console.log(lastName + ", " + firstName + " " + middleName)
+        console.log(`${lastName}, ${firstName} ${middleName}`)
+
+        //4. 화살표함수
+        // var lordify = function (firstName) {
+        //     return `캔터버리의 ${firstName}`
+        // }
+        var lordify = firstName => `캔터버리의 ${firstName}`;
+        console.log(lordify("오성원"))
+
+        var lordify2 = (firstName, land) => `${land}의 ${firstName}`
+        console.log(lordify2("오성원", "브리즈번"));
+
+        var gangwon = {
+            resorts: ["용평", "평창", "강촌", "강릉", "홍천"],
+            print: function (delay = 1000) { //여기서는 화살표함수를 쓰면 this가 윈도우가되므로 function을 써야한다.
+                setTimeout(() => { //화살표함수는 this를 새로 바인딩 하지 않는다.
+                    console.log(this === window)
+                    console.log(this.resorts.join(","))
+                }, delay)
+            }
+        }
+        gangwon.print()
+
+        //5. 구조분해를 사용한 대입
+
+        var sandwich = {
+            bread: "더치 크런치",
+            meat: "참치",
+            cheese: "스위스",
+            toppings: ["상추", "토마토", "머스타드"]
+        }
+
+        var { bread, meat } = sandwich
+
+        console.log(bread, meat);
+
+        var { bread, meat } = sandwich
+
+        bread = "마늘"
+        meat = "칠면조"
+
+        console.log(bread) // 마늘
+        console.log(meat) //칠면조
+
+        console.log(sandwich.bread, sandwich.meat) //더치 크런치, 참치
+
+        var lordify = regularPerson =>
+            console.log(`켄터버리의 ${regularPerson.firstname}`)
+
+        var regularPerson = {
+            firstname: "현석",
+            lastname: "오"
+        }
+
+        lordify(regularPerson)
+
+        var lordify = ({ firstname }) => {
+            console.log(`켄터버리의 ${firstname}`)
+        }
+
+        lordify(regularPerson)
+
+        var [firstResort] = ['용평', '평창', '강촌']
+        console.log(firstResort)
+        var [, , thirdResort] = ['용평', '평창', '강촌']
+        console.log(thirdResort)
+
+        //6. 객체 리터럴 개선
+        var name = "탈락"
+        var elevation = 9738
+
+        var funHike = { name, elevation }
+
+        console.log(funHike)
+
+        var name = "Tallac"
+        var elevation = 9738
+        var print = function () {
+            console.log(`${this.name} 산의 높이는 ${this.elevation}입니다.`)
+        }
+        var funhike = { name, elevation, print }
+
+        funhike.print()
+
+        var name = "Julia Mancuso"
+        var sound = "go fast"
+
+        const skier = {
+            name,
+            sound,
+            powderYell() {
+                let yell = this.sound.toUpperCase()
+                console.log(`${yell} ${yell} ${yell}!!!`);
+            },
+            speed(mph) {
+                this.speed = mph
+                console.log('속력(mph):', mph)
+            }
+        }
+
+        //7. 스프레드 연산자
+        var peaks = ["대청봉", "중청봉", "소청봉"]
+        var canyons = ["천불동계곡", "가야동계곡"]
+        var seoraksan = [...peaks, ...canyons]
+
+        console.log(seoraksan.join(', '))
+
+        var [last] = peaks.reverse()
+
+        console.log(last) //소청봉
+        console.log(peaks.join(', ')) //대청봉, 중청봉, 소청봉이어야하는데 소청봉 중청봉 대청봉
+        //reverse메서드는 원본배열을 변경한다는것을 알 수 있다.
+
+        var peaks = ["대청봉", "중청봉", "소청봉"]
+        var [last] = [...peaks].reverse() //원본배열을 변경하지않고 복사본을 만들어 뒤집음
+
+        console.log(last) //소청봉
+        console.log(peaks.join(', ')) //대청봉 중청봉 소청봉
+
+        var lakes = ["경포호", "화진포", "송지호", "청초호"]
+        var [first, ...rest] = lakes
+
+        console.log(rest.join(', '));
+
+        var morning = {
+            breakfast: "미역국",
+            lunch: "삼치구이와 보리밥"
+        }
+
+        var dinner = "스테이크 정식"
+
+        var backpackingMeals = {
+            ...morning,
+            dinner
+        }
+
+        console.log(backpackingMeals)
+
+        //8. promise : 비동기 동작을 잘 다루기위한 방법
+        const getFakemembers = count => new Promise((resolves, rejects) => {
+            const api = `https://api.randomuser.me/?nat=US&results=${count}`
+            const request = new XMLHttpRequest()
+            request.open('GET', api)
+            request.onload = () =>
+                (request.status === 200) ?
+                    resolves(JSON.parse(request.response).results) :
+                    reject(Error(request.statusText))
+            request.onerror = (err) => rejects(err)
+            request.send()
+        })
+
+        getFakemembers(5).then(
+            members => console.log(members),
+            err => console.error(
+                new Error("randomuser.me에서 멤버를 가져올 수 없습니다.")
+            )
+        )
+
+        //9. 클래스
+        class Vacation {
+            constructor(destination, length) {
+                this.destination = destination
+                this.length = length
+            }
+
+            print() {
+                console.log(`${this.destination}은(는) ${this.length}일 걸립니다.`)
+            }
+        }
+
+        const trip = new Vacation("칠레 산티아고", 7)
+        console.log(trip.print())
+
+        class Expedition extends Vacation {
+            constructor(destination, length, gear) {
+                super(destination, length)
+                this.gear = gear
+            }
+
+            print() {
+                super.print()
+                console.log(`당신의 ${this.gear.join("와(과) 당신의 ")}를(을) 가져오십시오.`)
+            }
+        }
+
+        const trip2 = new Expedition("한라산", 3, ["선글라스", "오색 깃발", "카메라"])
+        trip2.print()
+    </script>
+</body>
+
+</html>
