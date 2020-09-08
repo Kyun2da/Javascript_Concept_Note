@@ -17,4 +17,4 @@
 [참조](https://github.com/jsmapr1/simplifying-js)
 
 - [변수 할당으로 의도를 표현하라](./javascriptTip/variable)
-- 
+- [배열로 데이터 컬렉션을 관리하라](./javascriptTip/array)
