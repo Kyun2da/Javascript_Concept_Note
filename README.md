@@ -20,3 +20,5 @@
 - [배열로 데이터 컬렉션을 관리하라](./javascriptTip/array.md)
 
 - [특수한 컬렉션을 이용해 코드 명료성을 극대화하라](./javascriptTip/collection.md)
+
+- [조건문을 깔끔하게 작성하라](./javascriptTip/condition.md)
