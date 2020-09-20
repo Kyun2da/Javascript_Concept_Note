@@ -22,3 +22,5 @@
 - [특수한 컬렉션을 이용해 코드 명료성을 극대화하라](./javascriptTip/collection.md)
 
 - [조건문을 깔끔하게 작성하라](./javascriptTip/condition.md)
+
+- [반복문을 단순하게 만들어라 - (1)](./javascriptTip/loop1)
