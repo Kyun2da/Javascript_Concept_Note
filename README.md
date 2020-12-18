@@ -8,11 +8,24 @@
 
 ## Javascript 모르는 내용 정리
 
-- [외부스크립트 다루기](./개념정리/외부스크립트다루기.md)
+- [외부스크립트 다루기](./conceptNote/외부스크립트다루기.md)
 
 
 
-## Javascript Tip
+## 유용한 사이트 모음
+
+- [ko.javascript.info - 모던 Javascript 튜토리얼 한국어 번역](https://ko.javascript.info/)
+- [이웅모님의 poiema 웹 개발 튜토리얼](https://poiemaweb.com/)
+
+
+
+## Javascript 개념정리
+
+- [스코프](./conceptNote/scope.md)
+
+
+
+## Javascript Tip - 자바스크립트 코딩의 기술 책 참조
 
 [참조](https://github.com/jsmapr1/simplifying-js)
 
