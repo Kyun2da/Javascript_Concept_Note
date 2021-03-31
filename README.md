@@ -1,27 +1,33 @@
 # javascript_study
-자바스크립트 공부
-
-## Vanila Javascript로 구현한 웹게임
-- [웹게임](https://kyun2da.github.io/Javascript_Concept_Note/site/index.html)
+자바스크립트 공부내용을 정리하는 레포지토리입니다.
 
 
 
-## Javascript 모르는 내용 정리
+## Javascript 개념정리
 
-- [외부스크립트 다루기](./conceptNote/외부스크립트다루기.md)
+- [데이터 타입](./conceptNote/데이터선언.md)
+
+- [스코프](./conceptNote/scope.md)
 
 
 
-## 유용한 사이트 모음
+- [용어 정리](./conceptNote/용어정리.md)
+
+## 유용한 사이트 및 책 모음
+
+사이트
 
 - [ko.javascript.info - 모던 Javascript 튜토리얼 한국어 번역](https://ko.javascript.info/)
 - [이웅모님의 poiema 웹 개발 튜토리얼](https://poiemaweb.com/)
 
 
 
-## Javascript 개념정리
+책
 
-- [스코프](./conceptNote/scope.md)
+- [자바스크립트 딥다이브](http://www.yes24.com/Product/Goods/92742567?OzSrank=1)
+- [코어 자바스크립트](http://www.yes24.com/Product/Goods/78586788)
+- [You Don't know js - 타입과 스코프](http://www.yes24.com/Product/Goods/43219481)
+- [You Don't know js - this 와 프로토타입](http://www.yes24.com/Product/Goods/44132601)
 
 
 
@@ -39,3 +45,10 @@
 - [반복문을 단순하게 만들어라 - (1)](./javascriptTip/loop1)
 
 - [반복문을 단순하게 만들어라 - (2)](./javascriptTip/loop2)
+
+
+
+## Vanila Javascript로 구현한 웹게임
+
+- [웹게임](https://kyun2da.github.io/Javascript_Concept_Note/site/index.html)
+- [20ProjectsWithVanilaJS](./20projectsWithVanilaJS)
