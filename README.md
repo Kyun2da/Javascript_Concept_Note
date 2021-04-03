@@ -6,18 +6,15 @@
 ## Javascript 개념정리
 
 - [데이터 타입](./conceptNote/데이터선언.md)
-
 - [스코프](./conceptNote/scope.md)
-
 - [호이스팅](./conceptNote/호이스팅.md)
-- 프로토타입
+- [실행 컨텍스트](./conceptNote/실행컨텍스트.md)
+- [this](./conceptNote/this.md)
+- [프로토타입](./conceptNote/프로토타입.md)
 - 클래스
-- this
-- 실행 컨텍스트
 - 클로저
 - 이벤트
 - 비동기
-
 - [용어 정리](./conceptNote/용어정리.md)
 
 ## 유용한 사이트 및 책 모음
