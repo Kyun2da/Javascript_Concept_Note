@@ -8,10 +8,10 @@
 - [데이터 타입](./conceptNote/데이터선언.md)
 - [스코프](./conceptNote/scope.md)
 - [호이스팅](./conceptNote/호이스팅.md)
+- [프로토타입](./conceptNote/프로토타입.md)
+- [클래스](./conceptNote/클래스.md)
 - [실행 컨텍스트](./conceptNote/실행컨텍스트.md)
 - [this](./conceptNote/this.md)
-- [프로토타입](./conceptNote/프로토타입.md)
-- 클래스
 - 클로저
 - 이벤트
 - 비동기
@@ -52,7 +52,7 @@
 
 
 
-## Vanila Javascript로 구현한 웹게임
+## Vanila Javascript강의
 
 - [웹게임](https://kyun2da.github.io/Javascript_Concept_Note/site/index.html)
 - [20ProjectsWithVanilaJS](./20projectsWithVanilaJS)
